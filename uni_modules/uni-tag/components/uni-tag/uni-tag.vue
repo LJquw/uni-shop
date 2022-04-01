@@ -106,7 +106,7 @@
 	};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	$uni-primary: #2979ff !default;
 	$uni-success: #18bc37 !default;
 	$uni-warning: #f3a73f !default;
@@ -125,10 +125,10 @@
 		padding: $tag-default-pd;
 		color: #fff;
 		border-radius: 3px;
-		background-color: $uni-info;
+		background-color: #9e9e9e21;
 		border-width: 1rpx;
 		border-style: solid;
-		border-color: $uni-info;
+		border-color: #f8f8f8;
 		/* #ifdef H5 */
 		cursor: pointer;
 		/* #endif */

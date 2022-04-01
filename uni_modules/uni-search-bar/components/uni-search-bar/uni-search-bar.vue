@@ -99,8 +99,8 @@ s<template>
 		},
 		data() {
 			return {
-				show: false,
-				showSync: false,
+				show: true,
+				showSync: true,
 				searchVal: ''
 			}
 		},
@@ -214,7 +214,7 @@ s<template>
 	};
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 	$uni-searchbar-height: 36px;
 
 	.uni-searchbar {
@@ -224,7 +224,7 @@ s<template>
 		flex-direction: row;
 		position: relative;
 		padding: 10px;
-		// background-color: #fff;
+		background-color: #c00000;
 	}
 
 	.uni-searchbar__box {

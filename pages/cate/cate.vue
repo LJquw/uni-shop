@@ -1,12 +1,15 @@
 <template>
   <view>
+    <!-- 使用自定义的搜索组件 -->
+    <my-search @click='gotoSearch'></my-search>
+    
     <view class="scroll-view-container">
       <!-- 左侧的滚动视图区域 -->
-      <view class="left-scroll-view" scroll-y :style="{height:wh+'px'}">
+      <scroll-view class="left-scroll-view" scroll-y :style="{height:wh+'px'}">
         <block v-for="(item,i) in cateList" :key="i">
           <view :class="['left-scroll-view-item',i===active?'active':'']" @click="activeChanged(i)">{{item.cat_name}}</view>
         </block>
-      </view>
+      </scroll-view>
       <!-- 右侧的滚动视图区域 -->
       <scroll-view class="right-scroll-view" scroll-y :style="{height:wh+'px'}" :scroll-top="scrollTop">
         <view class="cate-lv2" v-for="(item2,i2) in cateLevel2" :key="i2" @click="gotoGoodsList(item2)">
@@ -42,7 +45,8 @@
       // 获取当前系统的信息
       const sysInfo = uni.getSystemInfoSync()
       // 为 wh 窗口可用高度动态赋值
-      this.wh=sysInfo.windowHeight
+      // 可用高度 = 屏幕高度 - navigationBar高度 - tabBar高度 - 自定义的search组件高度
+      this.wh=sysInfo.windowHeight-50
       this.getCateList()  // 调用获取分类列表数据的方法
     },
     methods:{
@@ -66,6 +70,11 @@
       gotoGoodsList(item){  // 跳转到商品列表页面
         uni.navigateTo({
           url:'/subpkg/goods_list/goods_list?cid='+item.cat_id
+        })
+      },
+      gotoSearch() { // 跳转到分包中的搜索页面
+        uni.navigateTo({
+          url: '/subpkg/search/search'
         })
       }
     }

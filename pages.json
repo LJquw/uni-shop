@@ -41,15 +41,25 @@
           "path" : "goods_detail/goods_detail",
           "style" :                                                                                    
           {
-            "navigationBarTitleText": "",
+            "navigationBarTitleText": "栀子优购",
             "enablePullDownRefresh": false
           }
         }
+        ,{
+            "path" : "goods_list/goods_list",
+            "style" :                                                                                    
+        {
+            "navigationBarTitleText": "栀子优购",
+            "enablePullDownRefresh": false
+        }
+        
+        }
+        
           ,{
-                    "path" : "goods_list/goods_list",
+                    "path" : "search/search",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "栀子优购",
                     "enablePullDownRefresh": false
                 }
                 
