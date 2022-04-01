@@ -12,12 +12,12 @@
       </scroll-view>
       <!-- 右侧的滚动视图区域 -->
       <scroll-view class="right-scroll-view" scroll-y :style="{height:wh+'px'}" :scroll-top="scrollTop">
-        <view class="cate-lv2" v-for="(item2,i2) in cateLevel2" :key="i2" @click="gotoGoodsList(item2)">
+        <view class="cate-lv2" v-for="(item2,i2) in cateLevel2" :key="i2">
           <view class="cate-lv2-title">/ {{item2.cat_name}} /</view>
           <!-- 动态渲染三级分类的列表数据 -->
           <view class="cate-lv3-list">
             <!-- 三级分类item项 -->
-            <view class="cate-lv3-item" v-for="(item3,i3) in item2.children" :key="i3">
+            <view class="cate-lv3-item" v-for="(item3,i3) in item2.children" :key="i3" @click="gotoGoodsList(item3)">
               <!-- 三级分类的图片 -->
               <image :src="item3.cat_icon"></image>
               <!-- 三级分类的文本 -->
@@ -67,9 +67,9 @@
         // 让 scrollTop 的值在 0 与 1 之间切换
         this.scrollTop=this.scrollTop===0?1:0
       },
-      gotoGoodsList(item){  // 跳转到商品列表页面
+      gotoGoodsList(item3){  // 跳转到商品列表页面
         uni.navigateTo({
-          url:'/subpkg/goods_list/goods_list?cid='+item.cat_id
+          url:'/subpkg/goods_list/goods_list?cid=' + item3.cat_id
         })
       },
       gotoSearch() { // 跳转到分包中的搜索页面
