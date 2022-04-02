@@ -45,7 +45,9 @@
 </template>
 
 <script>
+  import badgeMix from '@/mixins/tabbar-badge.js'
   export default {
+    mixins:[badgeMix],
     data() {
       return {  // 1. 定义数据
         swiperList:[], // 轮播图数据列表
