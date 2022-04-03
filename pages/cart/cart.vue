@@ -8,7 +8,7 @@
       <uni-icons type="shop" size="18"></uni-icons>
       <!-- 描述文本 -->
       <text class="cart-title-text">购物车</text>
-    </view>
+    </view> 
     <!-- 商品列表区域 -->
     <!-- uni-swipe-action 是最外层包裹性质的容器 -->
     <uni-swipe-action>
